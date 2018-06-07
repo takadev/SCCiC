@@ -149,6 +149,10 @@ Token nextToken(void)
         tk.val = ch - 'a';
         tk.kind = VarName;
         ch = nextChar();
+    } else if (isupper(ch)) {
+        tk.val= ch - 'A';
+        tk.kind = VarName;
+        ch = nextChar();
     } else {
         switch(ch) {
             case '(': tk.kind = Lparen; break;
