@@ -54,6 +54,7 @@ void input(void)
     fgets(buf, 80, stdin);
     bufp = buf;
     ch = nextChar();
+    print(ch);
 }
 
 void statement(void)
@@ -173,8 +174,11 @@ Token nextToken(void)
 
 int nextChar(void)
 {
-    if (*bufp == '\0') return '\0';
-    else return *bufp++;
+    if (*bufp == '\0') {
+        return '\0';
+    } else  {
+        return *bufp++;
+    }
 }
 
 void operate(Kind op)
